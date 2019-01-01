@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: select-deployment
+  namespace: thisorthat
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: vote-label
+    spec:
+      containers:
+      - image: borsear/voteui:votetag
+        name: select

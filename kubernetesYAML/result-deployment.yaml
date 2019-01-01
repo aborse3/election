@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: result
+  namespace: thisorthat
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: result
+    spec:
+      containers:
+      - image: borsear/resultui:resulttag
+        name: result
